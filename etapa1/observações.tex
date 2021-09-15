@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\begin{document}
+	
+	\title{Lista 5 - Grafos Hamiltonianos}
+	\author{Daniel Yoshio Hotta – 9922700}
+	
+	\maketitle
+	
+	\textbf {E17.} 
+	
+	Seja G um grafo simples com n vértices e hamiltoniano. Suponha por absurdo, que $\alpha (G) > n/2$.
+	
+	Tomemos o conjunto não vazio $S \subset V(G)$ tal que $S = V(G) - \alpha(G)$.
+	
+	Contudo, pelo teorema 4.1. Se G é hamiltoniano, então para todo conjunto não-vazio, $S \subset V(G)$, temos:
+	
+	$c(G - S) \leq |S|$
+	
+	Entretanto, temos que $c(G-S) = \alpha(G) > n/2$, pois é um conjunto estável e todos os vértices são não adjacentes.
+	E ainda: $|S| < n/2$.
+	Portanto,
+	
+	$c(G-S) > |S|$
+	Uma contradição! Pois não satisfaz condição \textit {necessária} para ser hamiltoniano!.
+	Portanto, temos que a afirmação é verdadeira.
+	
+	\textbf {E18.} 
+	
+	Seja $G$ um grafo simples de ordem $n \geq 3$ e $|A(G)| \geq (n-1) (n-2)/2 + 2$. 
+	
+	Primeiro, notemos que um grafo completo $K_n$ tem $|A(G)| = n (n-1)/2$. Ou seja, G está a $n - 3$ arestas para se tornar um grafo completo.
+	
+	Contudo, provaremos que todo par de vértice não adjacente u,v de $V(G)$ obedece a condição de Ore.
+	
+	$g(u)  +g(v) \geq n$   (*)
+	
+	Note que não há remoção de arestas, chamemos de A, em $K_n$ tal que $|A| = n-3$ e A quebre a condição (*). Um vez que:
+	1. Para não serem adjacentes temos que remover a aresta em comum de dados $u,v$.
+	2. Com as $n-4$ arestas restantes, mesmo que retiremos arestas somente de $u,v$, teríamos $g(u) + g(v) - n-4 = (n-2) + (n-2) - (n-4) = n$.
+	
+	Portanto, como G satisfaz a condição de Ore, G é hamiltoniano.
+	
+	\textbf {E20.} 
+	
+	Suponha que a afirmação seja falsa, que existe grafo simples não hamiltoniano G, (X,Y)-bipartido com $|X|=|Y|=k \geq 2$ e para todo par u,v não adjacente, temos $g(u) + g(v) > k$.
+	
+	Como G não é bipartido completo (pois senão seria claramente hamiltoniano, pois $|X| = |Y|$), existe um par de vértices u,j não adjacentes em G.
+	
+	Consideremos $H := G + uv$. Pela maximalidade de G, temos que H é hamiltoniano.
+	
+	Logo, todo circuito hamiltoniano em H tem deve conter a aresta uv. Então, G tem um caminho hamiltoniano de u a v, digamos
+	
+	$P := (u = v_1, v_2, ..., v_n = v)$
+	
+	Contudo, se $v_i$ é adjacente a u, então, $v_i-1$não é adjacente a v, pois senão teríamos um circuito:
+	
+	$C = (v_1, v_i, v_i+1,..., v_n, v_i-1, v_i-2,..., v_1)$
+	
+	contrariando a escolha de G.
+	
+	Portanto, para todo vértice adjacente a u, existe um vértice de $V(X)$ que não é adjacente a v. Mas, neste caso,
+	
+	$g(v) = k - g(u)$
+	Contudo,
+	$g(v) + g(u) = k - g(u) + g(u) = k$
+	
+	Contrariando a hipótese de que $g(v) + g(u) > k$.
+	Portanto, a afirmação é verdadeira.
+	
+	
+	
+	
+	
+\end{document}

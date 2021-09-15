@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Consulta 4.5 (Ou o que entendemos dela...)</h1>
+  {% if consulta_4_5_result %}
+    <p>TOTAL: {{consulta_4_5_result| length}}</p>
+    {% for row in consulta_4_5_result %}
+    <ul>
+        <li><p>: Perfil: {{row.tipo}}</p> </li>
+        <li><p>: Serviço: {{row.nome}}</p> </li>
+        <li><p>: Classe de Serviço: {{row.classe}}</p> </li>
+        <li><p>: Quantidade: {{row.countService}}</p> </li>
+    </ul>
+    </ul>
+    </ul>
+    <br>
+    {% endfor %}
+  {% else %}
+    <p>No results are available.</p>
+  {% endif %}
+</body>
+</html>
